@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #1f242d;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f242d;
+  z-index: 100;
+  flex-wrap: wrap;
+}
+
+.navbar .logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: #7cf03d;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links li a {
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links li:hover a,
+.nav-links li.active a {
+  color: #7cf03d;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 5%;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    justify-content: flex-end;
+    flex: 1;
+    gap: 10px;
+  }
+
+  .navbar .logo {
+    font-size: 20px;
+    margin-right: auto;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+  }
+
+  .home {
+    padding-top: 160px; /* Tambahan khusus mobile */
+  }
+}
+
+/* HOME SECTION */
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  padding: 150px 9% 40px; /* Jarak dari navbar */
+}
+
+.home-info {
+  max-width: 600px;
+  z-index: 2;
+}
+
+.home-info h1 {
+  font-size: 55px;
+}
+
+.home-info h2 {
+  font-size: 32px;
+  margin-top: -10px;
+  margin-bottom: 25px; /* Jarak ke tombol */
+}
+
+.home-info h2 span {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 0.7px #7cf03d;
+}
+
+.home-info h2 span::before {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  color: #7cf03d;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #7cf03d;
+  animation: fill-text 4s linear infinite;
+}
+
+@keyframes fill-text {
+  0%, 10%, 100% { width: 0; }
+  70%, 90% { width: 100%; }
+}
+
+.home-info p {
+  font-size: 16px;
+  margin: 10px 0 25px;
+}
+
+.btn-sci {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 40px; /* Jarak ke bawah gambar */
+}
+
+.btn {
+  padding: 10px 25px;
+  background: #7cf03d;
+  border-radius: 40px;
+  color: #1f242d;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: #7cf03d;
+  border: 2px solid #7cf03d;
+}
+
+.sci a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #7cf03d;
+  font-size: 20px;
+  color: #7cf03d;
+  transition: 0.3s;
+}
+
+.sci a:hover {
+  background: #7cf03d;
+  color: #1f242d;
+  box-shadow: 0 0 8px #7cf03d;
+}
+
+.home-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-box {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.img-item {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #1f242d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: rotate-image 20s linear infinite;
+}
+@keyframes rotate-image {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* BACKGROUND BARS */
+.bars-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -1;
+}
+
+.bars-animation .bar {
+  width: 100%;
+  height: 100%;
+  background: #1f242d;
+  transform: translateY(-100%);
+  animation: show-bars 0.5s ease-in-out forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes show-bars {
+  100% {
+    transform: translateY(0%);
+  }
+}

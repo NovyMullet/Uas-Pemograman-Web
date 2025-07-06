@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Portofolio - Novyston</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Navbar selalu tampil, tanpa toggle */
+    .menu-toggle {
+      display: none !important;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+
+    .home-info {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="#" class="logo">PORTFOLIO</a>
+
+    <!-- Menu navigasi langsung terlihat -->
+    <ul class="nav-links">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="tentang.html">About</a></li>
+      <li><a href="galeri.html">Galery</a></li>
+    </ul>
+  </nav>
+
+  <!-- BACKGROUND ANIMASI -->
+  <div class="bars-animation">
+    <div class="bar" style="--i:6;"></div>
+    <div class="bar" style="--i:5;"></div>
+    <div class="bar" style="--i:4;"></div>
+    <div class="bar" style="--i:3;"></div>
+    <div class="bar" style="--i:2;"></div>
+    <div class="bar" style="--i:1;"></div>
+  </div>
+
+  <!-- HOME SECTION -->
+  <section class="home">
+    <div class="home-info">
+      <h1>WELCOME</h1>
+      <h2>TO
+        <span style="--i:3;" data-text="NOVYSTON">NOVYSTON</span>
+        <span style="--i:2;" data-text="INSANI">INSANI</span>
+        <span style="--i:1;" data-text="FERRE">FERRE</span>
+      </h2>
+      <div class="btn-sci">
+        <a href="kontak.html" class="btn">Just Call Me</a>
+        <div class="sci">
+          <a href="https://www.instagram.com/novyston.insani" target="_blank">
+            <i class='bx bxl-instagram'></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-img">
+      <div class="img-box">
+        <div class="img-item">
+          <img src="assets/nov5.jpeg" class="rounded-image" alt="Foto Novyston" />
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
